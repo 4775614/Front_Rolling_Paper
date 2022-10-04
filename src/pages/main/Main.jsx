@@ -2,13 +2,10 @@ import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { onSaveHandler } from '../../redux/modules/paperSlice';
 import './Main.scss';
-import ModalOpen from '../../components/modal/ModalOpen';
 import ViewerComponent from '../../components/viewer/ViewerComponent';
 
 const Main = (props) => {
-  const editRef = useRef();
   const dispatch = useDispatch();
-  const [markdown, setHtml] = useState('');
   const handleRegisterButton = async () => {
     // try {
     //   const response = await dispatch(postingLetter)
@@ -47,6 +44,7 @@ const initialState = {
     setIsSelect(temp);
     setColor(el.value);
   };
+  // console.log(color)
   //이거 그냥 복붙! onChangeHandler & setData만 바꿔주기
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
