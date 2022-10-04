@@ -1,9 +1,10 @@
-.toastui-editor-contents{
-display: flex;
+.toastui-editor-contents {
+  display: flex;
 }
 
-.viewercomponent_box{
-    display: flex;
-    position: absolute;
-    cursor: pointer;
+.viewercomponent_box {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  cursor: pointer;
 }
