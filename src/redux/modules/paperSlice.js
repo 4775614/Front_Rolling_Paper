@@ -1,4 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import instance from './instance';
+
+
+export const postingLetter = createAsyncThunk(
+  'postingLetter',
+  async (payload, thunkAPI) => {
+    try {
+      const response = await instance.post(`rolling-pape`, payload);
+
+      if (response.data.success === true) {
+        return thunkAPI.fulfillWithValue(response.data.result);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 const initialState = {
   paper: [],
