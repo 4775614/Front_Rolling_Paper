@@ -6,7 +6,7 @@ export const postingLetter = createAsyncThunk(
   'postingLetter',
   async (payload, thunkAPI) => {
     try {
-      const response = await instance.post(`rolling-pape`, payload);
+      const response = await instance.post(`/rolling-pape`, payload);
 
       if (response.data.success === true) {
         return thunkAPI.fulfillWithValue(response.data.result);
