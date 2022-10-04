@@ -60,45 +60,45 @@ const Main = (props) => {
   };
   const newMarkdown = useSelector((state) => state.paper?.paper);
 
-  return (
-    <div className="main_container">
-      <ModalOpen />
-      <div className="main_title">
-        <h1>
-          <span>8</span>
-          <span>기</span>
-          <span>&nbsp;</span>
-          <span>B</span>
-          <span>반</span>
-          <span>&nbsp;</span>
-          <span>롤</span>
-          <span>링</span>
-          <span>페</span>
-          <span>이</span>
-          <span>퍼</span>
-        </h1>
-      </div>
-      <div div className="main_subtitle">
-        👏🏻 B반 너무 고생하셨습니다!👏🏻 <br />
-        🎉소소하게 준비해본 1조의 선물 🎉
-      </div>
-      <div div className="main_third_content">
-        최대한 본명으로 써주세요 🙂 글 클릭하면 댓글도 쓸 수 있어요 gogo~🔥
-      </div>
-      <div className="main_editor_wrap">
-        <div className="main_name_wrap">
-          <input
-            className="main_name"
-            type="text"
-            placeholder="당신은 누구십니까~"
-            name="name"
-            value={data.name}
-            onChange={onChangeHandler}
-          />
-          <button className="main_submit_btn" onClick={handleRegisterButton}>
-            등록
-          </button>
-        </div>
+	return (
+		<div className="main_container">
+    <ModalOpen/>
+			<div className="main_title">
+				<h1>
+					<span>8</span>
+					<span>기</span>
+					<span>&nbsp;</span>
+					<span>B</span>
+					<span>반</span>
+					<span>&nbsp;</span>
+					<span>롤</span>
+					<span>링</span>
+					<span>페</span>
+					<span>이</span>
+					<span>퍼</span>
+				</h1>
+			</div>
+			<div div className="main_subtitle">
+				👏🏻 B반 너무 고생하셨습니다!👏🏻 <br />
+				🎉소소하게 준비해본 1조의 선물 🎉
+			</div>
+			<div div className="main_third_content">
+				본명으로 부탁드려요 🙂 글 클릭하면 댓글도 쓸 수 있어요 gogo~🔥
+			</div>
+			<div className="main_editor_wrap">
+				<div className="main_name_wrap">
+					<input
+						className="main_name"
+						type="text"
+						placeholder="당신은 누구십니까~"
+						name="name"
+						value={data.name}
+						onChange={onChangeHandler}
+					/>
+					<button className="main_submit_btn" onClick={handleRegisterButton}>
+						등록
+					</button>
+				</div>
 
         <Editor
           ref={editRef}
