@@ -82,7 +82,7 @@ const Main = (props) => {
 				🎉소소하게 준비해본 1조의 선물 🎉
 			</div>
 			<div div className="main_third_content">
-				최대한 본명으로 써주세요 🙂 글 클릭하면 댓글도 쓸 수 있어요 gogo~🔥
+				본명으로 부탁드려요 🙂 글 클릭하면 댓글도 쓸 수 있어요 gogo~🔥
 			</div>
 			<div className="main_editor_wrap">
 				<div className="main_name_wrap">
