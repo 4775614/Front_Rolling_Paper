@@ -14,6 +14,7 @@ import ViewerComponent from '../../components/viewer/ViewerComponent';
 import { useEffect } from 'react';
 import { onSaveHandler } from '../../redux/modules/paperSlice';
 import './Main.scss';
+import ModalOpen from '../../components/modal/ModalOpen';
 
 const Main = (props) => {
 	const editRef = useRef();
@@ -60,6 +61,7 @@ const Main = (props) => {
 
 	return (
 		<div className="main_container">
+    <ModalOpen/>
 			<div className="main_title">
 				<h1>
 					<span>8</span>
