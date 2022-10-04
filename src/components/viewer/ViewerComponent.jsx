@@ -12,35 +12,47 @@ import { Viewer } from '@toast-ui/react-editor';
 import Draggable from 'react-draggable';
 import './ViewerComponent.scss';
 import Modal from '../modal/Modal';
+// import { TbHandFinger } from 'react-icons/tb';
+
+import { FaEnvelope } from 'react-icons/fa';
 
 const ViewerComponent = ({ item }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const trackPos = (data) => {
-    setPosition({ x: data.x, y: data.y });
-  };
-  const dragEndHandler = () => {
-    console.log(position);
-  };
-  const showModal = () => {
-    setModalOpen(true);
-  };
-  console.log(item);
-  return (
-    <>
-      <Draggable
-        defaultPosition={{ x: 20, y: 100 }}
-        onDrag={(e, data) => trackPos(data)}
-        onStop={(e, data) => dragEndHandler(data)}
-      >
-        <div className="viewercomponent_box" onClick={showModal}>
-          <div>{item.name}</div>
-          <div>{item.content}</div>
-        </div>
-      </Draggable>
-      {modalOpen && <Modal setModalOpen={setModalOpen} item={item}/>}
-    </>
-  );
+	const [modalOpen, setModalOpen] = useState(false);
+	const [position, setPosition] = useState({ x: 0, y: 0 });
+	const trackPos = (data) => {
+		setPosition({ x: data.x, y: data.y });
+	};
+	const dragEndHandler = () => {
+		console.log(position);
+	};
+	const showModal = () => {
+		setModalOpen(true);
+	};
+	console.log(item);
+	return (
+		<>
+			<Draggable
+				defaultPosition={{ x: 20, y: 100 }}
+				onDrag={(e, data) => trackPos(data)}
+				onStop={(e, data) => dragEndHandler(data)}
+			>
+				<div className="viewercomponent_box">
+					<div className="viewercomponent_wrap">
+						<div className="viewercomponent_name">
+							{item.name}&nbsp;
+							<FaEnvelope
+								className="viewercomponent_icon"
+								color="#c9b751"
+								onClick={showModal}
+							/>
+						</div>
+					</div>
+					<div className="viewercomponent_content">{item.content}</div>
+				</div>
+			</Draggable>
+			{modalOpen && <Modal setModalOpen={setModalOpen} item={item} />}
+		</>
+	);
 };
 
 export default ViewerComponent;
