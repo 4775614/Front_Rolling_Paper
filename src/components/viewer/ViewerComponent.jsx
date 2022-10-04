@@ -11,20 +11,39 @@ import '@toast-ui/editor/dist/toastui-editor-viewer.css';
 import { Viewer } from '@toast-ui/react-editor';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Draggable from 'react-draggable';
+import './ViewerComponent.scss';
 
 const ViewerComponent = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const newMarkdown = useSelector((state) => state.paper?.paper);
+  const trackPos = (data) => {
+    setPosition({ x: data.x, y: data.y });
+  };
 
   return (
-    <div>
+    <>
       {newMarkdown.map((item, index) => {
         return (
-          <div key={index}>
+          // <Draggable
+          //   key={index}
+          //   onDrag={(e, data) => trackPos(data)}
+          //   style={{
+          //     left: '50px',
+          //     top: '50px',
+          //   }}
+          // >
+          <div
+            className="viewercomponent_box"
+            draggable={true}
+            style={{ left: '50px', top: '50px' }}
+          >
             <Viewer initialValue={item} />
           </div>
+          // </Draggable>
         );
       })}
-    </div>
+    </>
   );
 };
 
