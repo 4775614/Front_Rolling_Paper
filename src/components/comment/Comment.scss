@@ -1,0 +1,40 @@
+.comment_input_wrap {
+  width: 100%;
+  height: 50px;
+  margin: 10px 0px 10px 0px;
+}
+.comment_input_name {
+  width: 13%;
+  margin-right: 10px;
+  height: 25px;
+  padding-left: 5px;
+  border: 2px solid black;
+}
+.comment_input_comment {
+  width: 50%;
+  margin-right: 10px;
+  height: 25px;
+  border: 2px solid black;
+  padding-left: 5px;
+}
+.comment_input_btn {
+  height: 29px;
+  width: 10%;
+  color: white;
+  background-color: black;
+  border: none;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.comment_get_comment_wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.comment_get_comment_name {
+  border-bottom: 2px solid black;
+}
+.comment_get_comment_body {
+  border-bottom: 2px solid black;
+}
