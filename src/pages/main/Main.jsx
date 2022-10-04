@@ -1,28 +1,38 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { onSaveHandler } from '../../redux/modules/paperSlice';
+import {
+  getLetter,
+  onSaveHandler,
+  postingLetter,
+} from '../../redux/modules/paperSlice';
 import './Main.scss';
 import ModalOpen from '../../components/modal/ModalOpen';
 import ViewerComponent from '../../components/viewer/ViewerComponent';
+import { useEffect } from 'react';
 
 const Main = (props) => {
-  const editRef = useRef();
   const dispatch = useDispatch();
-  const [markdown, setHtml] = useState('');
   const handleRegisterButton = async () => {
-    // try {
-    //   const response = await dispatch(postingLetter)
-    // } catch (error) {
-    // }
-
-    dispatch(onSaveHandler(data))
-    setData(initialState)
+    if (data.name === '' || data.content === '') {
+      alert('입력값을 모두 작성해주세요 :))');
+    } else {
+      dispatch(postingLetter(data));
+      setData(initialState);
+    }
   };
   const newMarkdown = useSelector((state) => state.paper.paper);
-const initialState = {
-  name:"",
-  content:"",
-}
+  console.log(newMarkdown);
+  const initialState = {
+    name: '',
+    content: '',
+    color: '#FF8B8B',
+    left: 0,
+    top: 0,
+  };
+
+  useEffect(() => {
+    dispatch(getLetter());
+  }, []);
   const [data, setData] = useState(initialState);
   const [color, setColor] = useState();
   const [isSelect, setIsSelect] = useState([
@@ -46,6 +56,7 @@ const initialState = {
     });
     setIsSelect(temp);
     setColor(el.value);
+    setData({ ...data, color: el.value });
   };
   //이거 그냥 복붙! onChangeHandler & setData만 바꿔주기
   const onChangeHandler = (e) => {
@@ -118,9 +129,11 @@ const initialState = {
             onChange={onChangeHandler}
           />
         </div>
-        {newMarkdown.map((item, index) => {
-          return <ViewerComponent item={item} key={index} />;
-        })}
+        {newMarkdown === undefined
+          ? ''
+          : newMarkdown.map((item, index) => {
+              return <ViewerComponent item={item} key={index} />;
+            })}
       </div>
     </div>
   );

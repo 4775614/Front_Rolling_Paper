@@ -12,33 +12,36 @@ import { Viewer } from '@toast-ui/react-editor';
 import Draggable from 'react-draggable';
 import './ViewerComponent.scss';
 import Modal from '../modal/Modal';
+import { useDispatch } from 'react-redux';
+import { patchLetter } from '../../redux/modules/paperSlice';
 
 const ViewerComponent = ({ item }) => {
+  const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const rollingPaperId = item.id;
   const trackPos = (data) => {
     setPosition({ x: data.x, y: data.y });
   };
   const dragEndHandler = () => {
-    console.log(position);
+    dispatch(patchLetter({ rollingPaperId, position }));
   };
   const showModal = () => {
     setModalOpen(true);
   };
-  console.log(item);
   return (
     <>
       <Draggable
-        defaultPosition={{ x: 20, y: 100 }}
+        defaultPosition={{ x: item.left, y: item.top }}
         onDrag={(e, data) => trackPos(data)}
         onStop={(e, data) => dragEndHandler(data)}
       >
         <div className="viewercomponent_box" onClick={showModal}>
           <div>{item.name}</div>
-          <div>{item.content}</div>
+          <div style={{color:`${item.color}`}}>{item.content}</div>
         </div>
       </Draggable>
-      {modalOpen && <Modal setModalOpen={setModalOpen} item={item}/>}
+      {modalOpen && <Modal setModalOpen={setModalOpen} item={item} />}
     </>
   );
 };
