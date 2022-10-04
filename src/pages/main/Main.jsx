@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { onSaveHandler } from '../../redux/modules/paperSlice';
 import './Main.scss';
-import ModalOpen from '../../components/modal/ModalOpen';
 import ViewerComponent from '../../components/viewer/ViewerComponent';
 
 const Main = (props) => {
