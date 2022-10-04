@@ -11,8 +11,10 @@ import '@toast-ui/editor/dist/toastui-editor-viewer.css';
 import { Viewer } from '@toast-ui/react-editor';
 import Draggable from 'react-draggable';
 import './ViewerComponent.scss';
+import Modal from '../modal/Modal';
 
 const ViewerComponent = ({ item }) => {
+  const [modalOpen, setModalOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const trackPos = (data) => {
     setPosition({ x: data.x, y: data.y });
@@ -20,18 +22,24 @@ const ViewerComponent = ({ item }) => {
   const dragEndHandler = () => {
     console.log(position);
   };
+  const showModal = () => {
+    setModalOpen(true);
+  };
   console.log(item);
   return (
-    <Draggable
-      defaultPosition={{ x: 20, y: 100 }}
-      onDrag={(e, data) => trackPos(data)}
-      onStop={(e, data) => dragEndHandler(data)}
-    >
-      <div className="viewercomponent_box">
-        <div>{item.name}</div>
-        <div>{item.content}</div>
-      </div>
-    </Draggable>
+    <>
+      <Draggable
+        defaultPosition={{ x: 20, y: 100 }}
+        onDrag={(e, data) => trackPos(data)}
+        onStop={(e, data) => dragEndHandler(data)}
+      >
+        <div className="viewercomponent_box" onClick={showModal}>
+          <div>{item.name}</div>
+          <div>{item.content}</div>
+        </div>
+      </Draggable>
+      {modalOpen && <Modal setModalOpen={setModalOpen} item={item}/>}
+    </>
   );
 };
 

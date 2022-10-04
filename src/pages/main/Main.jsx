@@ -122,7 +122,6 @@ const initialState = {
           return <ViewerComponent item={item} key={index} />;
         })}
       </div>
-      <ModalOpen />
     </div>
   );
 };
