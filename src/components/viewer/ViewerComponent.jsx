@@ -9,41 +9,27 @@ import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 // Toast-UI Viewer 임포트
 import '@toast-ui/editor/dist/toastui-editor-viewer.css';
 import { Viewer } from '@toast-ui/react-editor';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import Draggable from 'react-draggable';
 import './ViewerComponent.scss';
 
-const ViewerComponent = () => {
+const ViewerComponent = ({ item }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const newMarkdown = useSelector((state) => state.paper?.paper);
   const trackPos = (data) => {
     setPosition({ x: data.x, y: data.y });
   };
-
+  const dragEndHandler = () => {
+    console.log(position);
+  };
   return (
-    <>
-      {newMarkdown.map((item, index) => {
-        return (
-          // <Draggable
-          //   key={index}
-          //   onDrag={(e, data) => trackPos(data)}
-          //   style={{
-          //     left: '50px',
-          //     top: '50px',
-          //   }}
-          // >
-          <div
-            className="viewercomponent_box"
-            draggable={true}
-            style={{ left: '50px', top: '50px' }}
-          >
-            <Viewer initialValue={item} />
-          </div>
-          // </Draggable>
-        );
-      })}
-    </>
+    <Draggable
+      defaultPosition={{ x: 20, y: 100 }}
+      onDrag={(e, data) => trackPos(data)}
+      onStop={(e, data) => dragEndHandler(data)}
+    >
+      <div className="viewercomponent_box">
+        <Viewer initialValue={item} />
+      </div>
+    </Draggable>
   );
 };
 
