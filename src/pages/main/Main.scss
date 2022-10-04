@@ -12,6 +12,14 @@
 	font-size: 1.6rem;
 	padding-bottom: 20px;
 	margin-top: 0;
+	color: white;
+}
+
+.main_third_content {
+	font-weight: 700;
+	text-align: center;
+	color: #c9b751;
+	margin: auto;
 }
 
 .main_editor_wrap {
@@ -47,7 +55,7 @@
 
 .main_submit_btn {
 	width: 70px;
-	height: 30px;
+	height: 32px;
 	background-color: #c9b751;
 	border-radius: 10px;
 	color: black;
@@ -65,7 +73,7 @@ body {
 }
 
 html {
-	background: #e8e3c5;
+	background: #005fa9;
 	-webkit-font-smoothing: antialiased;
 	justify-content: center;
 	align-items: center;
@@ -141,6 +149,7 @@ h1 span:nth-child(11) {
 	justify-content: space-between;
 	border-radius: 10px 10px 0 0;
 	border-top: 1px solid #dadde6;
+	height: 40px;
 }
 // 원사이 간격
 .main_colorpick_label {
@@ -164,7 +173,7 @@ h1 span:nth-child(11) {
 }
 .main_content {
 	resize: none;
-	width: 91%;
+	width: 90.5%;
 	height: 80px;
 	font-size: 15px;
 	background-color: white;

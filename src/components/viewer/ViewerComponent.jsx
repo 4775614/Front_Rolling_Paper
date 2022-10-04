@@ -31,13 +31,13 @@ const ViewerComponent = ({ item }) => {
     setModalOpen(true);
   };
   return (
-    <>
-      <Draggable
-        defaultPosition={{ x: item.left, y: item.top }}
-        onDrag={(e, data) => trackPos(data)}
-        onStop={(e, data) => dragEndHandler(data)}
-      >
-    <div className="viewercomponent_box">
+		<>
+			<Draggable
+				defaultPosition={{ x: item.left, y: item.top }}
+				onDrag={(e, data) => trackPos(data)}
+				onStop={(e, data) => dragEndHandler(data)}
+			>
+				<div className="viewercomponent_box">
 					<div className="viewercomponent_wrap">
 						<div className="viewercomponent_name">
 							{item.name}&nbsp;
@@ -48,13 +48,23 @@ const ViewerComponent = ({ item }) => {
 							/>
 						</div>
 					</div>
-					<div className="viewercomponent_content" style={{color:`${item.color}`}} >{item.content}</div>
+					<div
+						className="viewercomponent_content"
+						style={{ color: `${item.color}` }}
+					>
+						{item.content}
+					</div>
 				</div>
-        
-      </Draggable>
-      {modalOpen && <Modal setModalOpen={setModalOpen} item={item} />}
-    </>
-  );
+			</Draggable>
+			{modalOpen && (
+				<Modal
+					setModalOpen={setModalOpen}
+					item={item}
+					rollingPaperId={rollingPaperId}
+				/>
+			)}
+		</>
+	);
 };
 
 export default ViewerComponent;
