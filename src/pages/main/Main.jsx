@@ -57,7 +57,6 @@ const initialState = {
 
   return (
     <div className="main_container">
-      <ModalOpen />
       <div className="main_title">
         <h1>
           <span>8</span>
@@ -123,6 +122,7 @@ const initialState = {
           return <ViewerComponent item={item} key={index} />;
         })}
       </div>
+      <ModalOpen />
     </div>
   );
 };
