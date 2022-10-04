@@ -1,6 +1,7 @@
 .main_container {
 	text-align: center;
 	padding-top: 40px;
+	align-items: center;
 }
 
 .main_title {
@@ -56,27 +57,6 @@
 	font-weight: 500;
 	float: right;
 	cursor: pointer;
-}
-
-.toastui-editor-contents p {
-	font-size: 1rem;
-}
-
-.toastui-editor-defaultUI-toolbar {
-	border-radius: 12px 12px 0 0;
-	height: 38px;
-}
-
-.toastui-editor-ww-container {
-	border-radius: 0 0 12px 12px;
-}
-
-.toastui-editor-toolbar {
-	height: 39px;
-}
-
-.toastui-editor-defaultUI-toolbar button {
-	margin: 3px 5px;
 }
 
 html,
@@ -142,23 +122,41 @@ h1 span:nth-child(11) {
 			0 50px 25px rgba(0, 0, 0, 0.2);
 	}
 }
-.main_colorpick_wrap {
+.main_input_container {
+	width: 400px;
+	height: 100%;
 	display: flex;
-	margin-top: 10px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+}
+.main_colorpick_wrap {
+	background-color: #f1f1f1;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0;
+	justify-content: space-between;
+	border-radius: 10px 10px 0 0;
+	border-top: 1px solid #dadde6;
 }
 // 원사이 간격
 .main_colorpick_label {
-	padding: 3px;
-	justify-content: center;
+	padding: 9px 0;
+	width: 100%;
 }
 // 체크박스 숨김
 .main_colorpick_input {
 	display: none;
+	width: 100%;
 }
 .main_colorpick_color {
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 1.3rem;
+	height: 1.3rem;
 	border-radius: 3rem;
+	margin: auto;
 }
 .main_colorpick_input:checked + .main_colorpick_color {
 	border: 3px solid #ffffff;
@@ -166,15 +164,15 @@ h1 span:nth-child(11) {
 }
 .main_content {
 	resize: none;
-	margin-top: 10px;
-	width: 100%;
-	height: 150px;
+	width: 91%;
+	height: 80px;
 	font-size: 15px;
-	padding: 10px 13px;
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 0 0 10px 10px;
 	color: black;
 	border: 1px solid #dadde6;
+	padding: 15px 18px 15px 18px;
+
 	&::placeholder {
 		color: #999999;
 	}

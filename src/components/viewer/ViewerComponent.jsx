@@ -14,6 +14,7 @@ import './ViewerComponent.scss';
 import Modal from '../modal/Modal';
 import { useDispatch } from 'react-redux';
 import { patchLetter } from '../../redux/modules/paperSlice';
+import { FaEnvelope } from 'react-icons/fa';
 
 const ViewerComponent = ({ item }) => {
   const dispatch = useDispatch();
@@ -36,10 +37,20 @@ const ViewerComponent = ({ item }) => {
         onDrag={(e, data) => trackPos(data)}
         onStop={(e, data) => dragEndHandler(data)}
       >
-        <div className="viewercomponent_box" onClick={showModal}>
-          <div>{item.name}</div>
-          <div style={{color:`${item.color}`}}>{item.content}</div>
-        </div>
+    <div className="viewercomponent_box">
+					<div className="viewercomponent_wrap">
+						<div className="viewercomponent_name">
+							{item.name}&nbsp;
+							<FaEnvelope
+								className="viewercomponent_icon"
+								color="#c9b751"
+								onClick={showModal}
+							/>
+						</div>
+					</div>
+					<div className="viewercomponent_content" style={{color:`${item.color}`}} >{item.content}</div>
+				</div>
+        
       </Draggable>
       {modalOpen && <Modal setModalOpen={setModalOpen} item={item} />}
     </>

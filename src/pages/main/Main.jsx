@@ -6,7 +6,6 @@ import {
   postingLetter,
 } from '../../redux/modules/paperSlice';
 import './Main.scss';
-import ModalOpen from '../../components/modal/ModalOpen';
 import ViewerComponent from '../../components/viewer/ViewerComponent';
 import { useEffect } from 'react';
 
@@ -36,18 +35,18 @@ const Main = (props) => {
   const [data, setData] = useState(initialState);
   const [color, setColor] = useState();
   const [isSelect, setIsSelect] = useState([
-    { key: '0', value: '#FF8B8B', checked: false },
-    { key: '1', value: '#FFCA8B', checked: false },
-    { key: '2', value: '#FFEC8B', checked: false },
-    { key: '3', value: '#D3FF8B', checked: false },
-    { key: '4', value: '#9BFF8B', checked: false },
-    { key: '5', value: '#8BFFCE', checked: false },
-    { key: '6', value: '#8BFFFF', checked: false },
-    { key: '7', value: '#8BB2FF', checked: false },
-    { key: '8', value: '#8B90FF', checked: false },
-    { key: '9', value: '#D38BFF', checked: false },
-    { key: '10', value: '#FD8BFF', checked: false },
-    { key: '11', value: '#FF8BB5', checked: false },
+		{ key: '0', value: '#FF8B8B', checked: false },
+		{ key: '1', value: '#FFCA8B', checked: false },
+		{ key: '2', value: '#ebd357', checked: false },
+		{ key: '3', value: '#c0e97f', checked: false },
+		{ key: '4', value: '#81e871', checked: false },
+		{ key: '5', value: '#6ae4b1', checked: false },
+		{ key: '6', value: '#74e8e8', checked: false },
+		{ key: '7', value: '#8BB2FF', checked: false },
+		{ key: '8', value: '#8B90FF', checked: false },
+		{ key: '9', value: '#D38BFF', checked: false },
+		{ key: '10', value: '#FD8BFF', checked: false },
+		{ key: '11', value: '#FF8BB5', checked: false },
   ]);
 
   const onChangeColor = (el) => (event) => {
@@ -95,10 +94,11 @@ const Main = (props) => {
           <input
             className="main_name"
             type="text"
-            placeholder="당신은 누구십니까~"
+            placeholder="이름을 적어주세요!"
             name="name"
             value={data.name}
             onChange={onChangeHandler}
+            maxLength="6"
           />
           <button className="main_submit_btn" onClick={handleRegisterButton}>
             등록
@@ -124,7 +124,7 @@ const Main = (props) => {
           <textarea
             className="main_content"
             name="content"
-            placeholder="한마디 적어주세요"
+            placeholder="응원의 한마디 적어주세요 🎉"
             value={data.content}
             onChange={onChangeHandler}
           />
