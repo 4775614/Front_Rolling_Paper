@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 import {
   getLetter,
   onSaveHandler,
@@ -10,6 +12,7 @@ import ViewerComponent from '../../components/viewer/ViewerComponent';
 import { useEffect } from 'react';
 
 const Main = (props) => {
+  const { width, height } = useWindowSize()
   const dispatch = useDispatch();
   const handleRegisterButton = async () => {
     if (data.name === '' || data.content === '') {
@@ -20,7 +23,7 @@ const Main = (props) => {
     }
   };
   const newMarkdown = useSelector((state) => state.paper.paper);
-  console.log(newMarkdown);
+  const [confetti, setConfetti] = useState(true)
   const initialState = {
     name: '',
     content: '',
@@ -31,6 +34,7 @@ const Main = (props) => {
 
   useEffect(() => {
     dispatch(getLetter());
+    let timer = setTimeout(() => setConfetti(false), 9000);
   }, []);
   const [data, setData] = useState(initialState);
   const [color, setColor] = useState();
@@ -40,7 +44,7 @@ const Main = (props) => {
 		{ key: '2', value: '#ebd357', checked: false },
 		{ key: '3', value: '#c0e97f', checked: false },
 		{ key: '4', value: '#81e871', checked: false },
-		{ key: '5', value: '#6ae4b1', checked: false },
+		{ key: '5', value: '#648f7d', checked: false },
 		{ key: '6', value: '#74e8e8', checked: false },
 		{ key: '7', value: '#8BB2FF', checked: false },
 		{ key: '8', value: '#8B90FF', checked: false },
@@ -67,6 +71,12 @@ const Main = (props) => {
 
   return (
     <div className="main_container">
+      {confetti === true ? <Confetti
+      width={width}
+      height={height}
+      /> :
+      ''
+    }
       <div className="main_title">
         <h1>
           <span>8</span>
