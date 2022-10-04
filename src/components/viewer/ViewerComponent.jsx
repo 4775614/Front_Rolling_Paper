@@ -20,6 +20,7 @@ const ViewerComponent = ({ item }) => {
   const dragEndHandler = () => {
     console.log(position);
   };
+  console.log(item);
   return (
     <Draggable
       defaultPosition={{ x: 20, y: 100 }}
@@ -27,7 +28,8 @@ const ViewerComponent = ({ item }) => {
       onStop={(e, data) => dragEndHandler(data)}
     >
       <div className="viewercomponent_box">
-        <Viewer initialValue={item} />
+        <div>{item.name}</div>
+        <div>{item.content}</div>
       </div>
     </Draggable>
   );

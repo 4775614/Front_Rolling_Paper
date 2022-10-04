@@ -3,21 +3,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onSaveHandler } from '../../redux/modules/paperSlice';
 import './Main.scss';
 import ModalOpen from '../../components/modal/ModalOpen';
+import ViewerComponent from '../../components/viewer/ViewerComponent';
 
 const Main = (props) => {
   const editRef = useRef();
   const dispatch = useDispatch();
   const [markdown, setHtml] = useState('');
-  const handleRegisterButton = async() => {
+  const handleRegisterButton = async () => {
     // try {
     //   const response = await dispatch(postingLetter)
     // } catch (error) {
-      
     // }
-  
-  };
 
-  const [data, setData] = useState({ name: '', content: '' });
+    dispatch(onSaveHandler(data))
+    setData(initialState)
+  };
+  const newMarkdown = useSelector((state) => state.paper.paper);
+const initialState = {
+  name:"",
+  content:"",
+}
+  const [data, setData] = useState(initialState);
   const [color, setColor] = useState();
   const [isSelect, setIsSelect] = useState([
     { key: '0', value: '#FF8B8B', checked: false },
@@ -106,18 +112,17 @@ const Main = (props) => {
             ))}
           </div>
           <textarea
-          className='main_content'
+            className="main_content"
             name="content"
-            placeholder='한마디 적어주세요'
+            placeholder="한마디 적어주세요"
             value={data.content}
             onChange={onChangeHandler}
           />
         </div>
         {newMarkdown.map((item, index) => {
-        return <ViewerComponent item={item} key={index}/>;
-      })}
+          return <ViewerComponent item={item} key={index} />;
+        })}
       </div>
-
     </div>
   );
 };
