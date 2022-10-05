@@ -17,7 +17,7 @@ const Main = (props) => {
     } else {
       if (
         window.confirm(
-          '글 작성 후 삭제나 수정이 불가해요! \n글 작성 하시겠어요?'
+          '글 작성시 삭제나 수정이 불가해요! \n글 작성 하시겠어요?'
         )
       ) {
         dispatch(postingLetter(data));
@@ -72,85 +72,85 @@ const Main = (props) => {
   };
 
   return (
-    <div className="main_container">
-      {confetti === true ? (
-        <Confetti width={width} height={height} style={{ position: 'fixed' }} />
-      ) : (
-        ''
-      )}
-      <div className="main_title">
-        <h1>
-          <span>8</span>
-          <span>기</span>
-          <span>&nbsp;</span>
-          <span>B</span>
-          <span>반</span>
-          <span>&nbsp;</span>
-          <span>롤</span>
-          <span>링</span>
-          <span>페</span>
-          <span>이</span>
-          <span>퍼</span>
-        </h1>
-      </div>
-      <div className="main_subtitle">
-        👏🏻 B반 너무 고생하셨습니다!👏🏻 <br />
-        🎉소소하게 준비해본 1조의 선물 🎉
-      </div>
-      <div className="main_third_content">
-        🔥 꼭!! 본명으로 글 작성해주세요 🔥<br></br> 익명으로 작성시 삭제될 수도
-        있어요
-      </div>
-      <div className="main_editor_wrap">
-        <div className="main_name_wrap">
-          <input
-            className="main_name"
-            type="text"
-            placeholder="이름을 적어주세요!"
-            name="name"
-            value={data.name}
-            onChange={onChangeHandler}
-            maxLength="6"
-          />
-          <button className="main_submit_btn" onClick={handleRegisterButton}>
-            등록
-          </button>
-          <div className="main_input_container">
-            <div className="main_colorpick_wrap">
-              {isSelect.map((el, idx) => (
-                <label className="main_colorpick_label" key={el.key}>
-                  <input
-                    className="main_colorpick_input"
-                    type="checkbox"
-                    key={el.key}
-                    id={idx}
-                    onChange={onChangeColor(el)}
-                    checked={Boolean(el.checked)}
-                  />
-                  <div
-                    className="main_colorpick_color"
-                    style={{ backgroundColor: el.value }}
-                  ></div>
-                </label>
-              ))}
-            </div>
-            <textarea
-              className="main_content"
-              name="content"
-              placeholder="응원의 한마디 적어주세요 🎉"
-              value={data.content}
-              onChange={onChangeHandler}
-            />
-          </div>
-        </div>
-        {newMarkdown === undefined
-          ? ''
-          : newMarkdown.map((item, index) => {
-              return <ViewerComponent item={item} key={index} />;
-            })}
-      </div>
-    </div>
-  );
+		<div className="main_container">
+			{confetti === true ? (
+				<Confetti width={width} height={height} style={{ position: 'fixed' }} />
+			) : (
+				''
+			)}
+			<div className="main_title">
+				<h1>
+					<span>8</span>
+					<span>기</span>
+					<span>&nbsp;</span>
+					<span>B</span>
+					<span>반</span>
+					<span>&nbsp;</span>
+					<span>롤</span>
+					<span>링</span>
+					<span>페</span>
+					<span>이</span>
+					<span>퍼</span>
+				</h1>
+			</div>
+			<div className="main_subtitle">
+				👏🏻 B반 너무 고생하셨습니다!👏🏻 <br />
+				🎉 소소하게 준비해 본 1조 선물 🎉
+			</div>
+			<div className="main_third_content">
+				🔥 꼭-! 본명으로 글 작성 부탁드려요 🔥
+        <br></br>적절하지 않은 글은 삭제됩니다 🙂
+			</div>
+			<div className="main_editor_wrap">
+				<div className="main_name_wrap">
+					<input
+						className="main_name"
+						type="text"
+						placeholder="이름을 적어주세요!"
+						name="name"
+						value={data.name}
+						onChange={onChangeHandler}
+						maxLength="6"
+					/>
+					<button className="main_submit_btn" onClick={handleRegisterButton}>
+						등록
+					</button>
+					<div className="main_input_container">
+						<div className="main_colorpick_wrap">
+							{isSelect.map((el, idx) => (
+								<label className="main_colorpick_label" key={el.key}>
+									<input
+										className="main_colorpick_input"
+										type="checkbox"
+										key={el.key}
+										id={idx}
+										onChange={onChangeColor(el)}
+										checked={Boolean(el.checked)}
+									/>
+									<div
+										className="main_colorpick_color"
+										style={{ backgroundColor: el.value }}
+									></div>
+								</label>
+							))}
+						</div>
+						<textarea
+							className="main_content"
+							name="content"
+							placeholder="응원의 한마디 적어주세요 🎉"
+							value={data.content}
+							onChange={onChangeHandler}
+						/>
+					</div>
+				</div>
+				{newMarkdown === undefined
+					? ''
+					: newMarkdown.map((item, index) => {
+							return <ViewerComponent item={item} key={index} />;
+					  })}
+			</div>
+		</div>
+	);
 };
 
 export default Main;
