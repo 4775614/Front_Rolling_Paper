@@ -5,6 +5,7 @@ import Comment from '../comment/Comment';
 
 const Modal = ({ setModalOpen, item, rollingPaperId }) => {
 	const closeModal = () => {
+		document.body.style.overflow = 'hidden';
 		setModalOpen(false);
 	};
 	return (
@@ -14,7 +15,7 @@ const Modal = ({ setModalOpen, item, rollingPaperId }) => {
 					<CgClose onClick={closeModal} className="modal_close_icon" />
 					<div className="modal_letter_wrap">
 						<div className="modal_name_emoji">👑</div>
-						<div className="modal_name">👉🏻 {item.name} 👈🏻</div>
+						<div className="modal_name">{item.name}</div>
 						<div className="modal_content">{item.content}</div>
 					</div>
 					<Comment rollingPaperId={rollingPaperId} />
