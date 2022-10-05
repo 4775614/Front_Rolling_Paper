@@ -98,7 +98,7 @@ const Main = (props) => {
 				🎉 소소하게 준비해 본 1조 선물 🎉
 			</div>
 			<div className="main_third_content">
-				🔥 꼭! 본명으로 글 작성 부탁드려요 🔥
+				🔥 꼭-! 본명으로 글 작성 부탁드려요 🔥
         <br></br>적절하지 않은 글은 삭제됩니다 🙂
 			</div>
 			<div className="main_editor_wrap">
