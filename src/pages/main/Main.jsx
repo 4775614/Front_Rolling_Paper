@@ -42,19 +42,19 @@ const Main = (props) => {
   const [data, setData] = useState(initialState);
   const [color, setColor] = useState();
   const [isSelect, setIsSelect] = useState([
-    { key: '0', value: '#FF8B8B', checked: false },
-    { key: '1', value: '#FFCA8B', checked: false },
-    { key: '2', value: '#ebd357', checked: false },
-    { key: '3', value: '#c0e97f', checked: false },
-    { key: '4', value: '#81e871', checked: false },
-    { key: '5', value: '#648f7d', checked: false },
-    { key: '6', value: '#74e8e8', checked: false },
-    { key: '7', value: '#8BB2FF', checked: false },
-    { key: '8', value: '#8B90FF', checked: false },
-    { key: '9', value: '#D38BFF', checked: false },
-    { key: '10', value: '#FD8BFF', checked: false },
-    { key: '11', value: '#FF8BB5', checked: false },
-  ]);
+		{ key: '0', value: '#FF8B8B', checked: false },
+		{ key: '1', value: '#FFCA8B', checked: false },
+		{ key: '2', value: '#ebd357', checked: false },
+		{ key: '3', value: '#c0e97f', checked: false },
+		{ key: '4', value: '#81e871', checked: false },
+		{ key: '5', value: '#00a862', checked: false },
+		{ key: '6', value: '#74e8e8', checked: false },
+		{ key: '7', value: '#8BB2FF', checked: false },
+		{ key: '8', value: '#8B90FF', checked: false },
+		{ key: '9', value: '#D38BFF', checked: false },
+		{ key: '10', value: '#959595', checked: false },
+		{ key: '11', value: '#000000', checked: false },
+	]);
 
   const onChangeColor = (el) => (event) => {
     const temp = isSelect.map((el, idx) => {

@@ -168,7 +168,7 @@ h1 span:nth-child(11) {
 	margin: auto;
 }
 .main_colorpick_input:checked + .main_colorpick_color {
-	border: 3px solid #ffffff;
+	border: 2px solid #005fa9;
 	// box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, .12);;
 }
 .main_content {
@@ -181,6 +181,9 @@ h1 span:nth-child(11) {
 	color: black;
 	border: 1px solid #dadde6;
 	padding: 15px 18px 15px 18px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
 
 	&::placeholder {
 		color: #999999;
