@@ -46,7 +46,6 @@ export const patchLetter = createAsyncThunk(
 					withCredentials: true,
 				}
 			);
-			console.log(response);
 			if (response.data.success === true) {
 				return thunkAPI.fulfillWithValue(response.data.result);
 			}
