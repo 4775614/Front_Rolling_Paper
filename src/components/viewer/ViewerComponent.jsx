@@ -14,7 +14,8 @@ const ViewerComponent = ({ item }) => {
 	const trackPos = (data) => {
 		setPosition({ x: data.x, y: data.y });
 	};
-	const dragEndHandler = () => {
+	const dragEndHandler = (data) => {
+		setPosition({ x: data.x, y: data.y });
 		dispatch(patchLetter({ rollingPaperId, position }));
 	};
 	const showModal = () => {
