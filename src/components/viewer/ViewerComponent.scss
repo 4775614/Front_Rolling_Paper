@@ -1,0 +1,34 @@
+.toastui-editor-contents {
+	display: flex;
+}
+
+.viewercomponent_box {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	width: 230px;
+	cursor: pointer;
+}
+.viewercomponent_wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.viewercomponent_name {
+	font-size: 1rem;
+	font-weight: 600;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.viewercomponent_icon {
+	font-size: 20px;
+}
+
+.viewercomponent_content {
+	font-size: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
