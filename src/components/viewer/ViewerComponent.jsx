@@ -9,7 +9,7 @@ import { FaEnvelope } from 'react-icons/fa';
 const ViewerComponent = ({ item }) => {
 	const dispatch = useDispatch();
 	const [modalOpen, setModalOpen] = useState(false);
-	const [position, setPosition] = useState({ x: 0, y: 0 });
+	const [position, setPosition] = useState();
 	const rollingPaperId = item.id;
 	const trackPos = (data) => {
 		setPosition({ x: data.x, y: data.y });
