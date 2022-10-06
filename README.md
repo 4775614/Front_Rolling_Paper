@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+## Rolling Paper ! 🎉
+<img src="https://user-images.githubusercontent.com/74149915/194406866-4ccd75bd-9ec8-4ab9-972a-30effc824902.gif" alt="drawing" width="100%"/>
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ✨ 프로젝트 소개
+### 항해99 B반을 위한 롤링페이퍼 제작! <br>
+빌리 팀원들과 최종 프로젝트 끝낸 후 호다닥- 만들어본 롤링페이퍼입니다 :D <br>
+롤링페이퍼는 정렬되지 않은 위치에 뒤죽박죽 쓰는게 제맛이겠죠?! 😬 <br>
+동일한 느낌으로 제작하고 싶어 draggable 라이브러리를 사용해 원하는 위치에 글을 옮길 수 있도록 제작하였습니다! 🙂 <br>
+<br>
+✨모두모두 수고했어요~! 🔥
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 👻 Billy 팀원들!
+|Role|Name|Github|
+|---|---|---|
+|팀장*BE|김보슬|https://github.com/keembogeul|
+|BE|류지우|https://github.com/ryujiwoo184|
+|BE|민영기|https://github.com/minyoungki|
+|부팀장*FE|나소나|https://github.com/4775614|
+|FE|서윤원|https://github.com/Yoonwonsuh|
+|FE|김은경|https://github.com/GinaEunK|
